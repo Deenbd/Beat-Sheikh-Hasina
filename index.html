@@ -27,15 +27,15 @@
 </head>
 <body>
 
-<div id="box">লোড হচ্ছে...</div>
+<div id="box">Loading...</div>
 
 <div class="inp">
     <div class="r">
-        <input type="text" id="n" placeholder="নাম" maxlength="40">
+        <input type="text" id="n" placeholder="Enter your name" maxlength="40">
         <button onclick="ref()" id="rb"><img src="reload.png"></button>
     </div>
     <div class="r">
-        <input type="text" id="m" placeholder="মেসেজ লিখুন" maxlength="400">
+        <input type="text" id="m" placeholder="Enter your comment" maxlength="400">
         <button onclick="send()" id="sb"><img src="send.png" id="si"></button>
     </div>
 </div>
@@ -101,13 +101,13 @@ function send(){
             document.getElementById('m').value='';
             load();
         }else{
-            alert('পাঠাতে সমস্যা হয়েছে');
+            alert('Error to send, please try again!');
         }
     })
     .catch(()=>{
         document.getElementById('sb').disabled = false;
         document.getElementById('si').style.opacity = '1';
-        alert('ইন্টারনেট সমস্যা');
+        alert('You are in offline!');
     });
 }
 
